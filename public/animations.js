@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
       delay: 0.5,
     });
 
-  const masterTimeline = gsap.timeline({ repeat: -1, duration: 12 });
+  const masterTimeline = gsap.timeline({ repeat: -1, duration: 12, delay: 1 });
   masterTimeline
     .add(tl_grabbyHand, 0)
     .add(tl_lever, 0)
