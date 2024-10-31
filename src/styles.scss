@@ -1,0 +1,86 @@
+html {
+  height: 100%;
+}
+
+@mixin debug {
+  outline: 1px solid red;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #595959;
+}
+
+.animation-frame {
+  border: 1px solid darken(#595959, 10%);
+  background: white;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.machine {
+  width: 100%;
+  height: 100%;
+  background: url('images/machine-base.png') top left no-repeat;
+}
+
+.pom-pom {
+  width: 85px;
+  height: 23px;
+  position: absolute;
+  bottom: 0;
+  left: 1px;
+  background: url('images/dragon-off.png') bottom center no-repeat;
+
+  &.rawr {
+    background-image: url('images/dragon-on.png');
+  }
+}
+
+.lever {
+  width: 12px;
+  height: 61px;
+  position: absolute;
+  right: 0px;
+  bottom: 8px;
+
+  .knob {
+    width: 12px;
+    height: 12px;
+    background: url('images/lever-knob.png') bottom center no-repeat;
+  }
+  .shaft {
+    width: 4px;
+    height: 43px;
+    position: relative;
+    left: 4px;
+    // @include debug();
+    background: url('images/lever-stick.png') bottom center no-repeat;
+  }
+  .bend {
+    width: 6px;
+    height: 6px;
+    position: relative;
+    left: 2px;
+    background: url('images/lever-bottom.png') bottom center no-repeat;
+  }
+}
+
+.paw {
+  position: absolute;
+  width: 43px;
+  height: 89px;
+  background: url('images/paw-open.png') bottom center no-repeat;
+  left: 30px;
+  bottom: -90px;
+  // @include debug();
+  z-index: 500;
+
+  &.closed {
+    background-image: url('images/paw-closed.png');
+  }
+}
