@@ -1,65 +1,147 @@
 html {
-  height: 100%; }
+  height: 100%;
+}
 
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
-  background-color: #595959; }
+  background-color: #595959;
+}
 
 .animation-frame {
   border: 1px solid #404040;
   background: white;
   width: 100px;
   height: 100px;
-  position: relative; }
+  position: relative;
+  overflow: hidden;
+}
 
 .machine {
   width: 100%;
   height: 100%;
-  background: url("images/machine-base.png") top left no-repeat; }
+  background: url('images/machine-base.png') top left no-repeat;
+  position: relative;
+  z-index: 400;
+}
+
+.column-backdrop {
+  position: absolute;
+  top: 13px;
+  left: 4px;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    0deg,
+    #83766c 0%,
+    rgba(255, 255, 255, 0) 50%,
+    #c4f3ff 100%
+  );
+  z-index: 0;
+  opacity: 0.6;
+}
 
 .pom-pom {
   width: 85px;
   height: 23px;
   position: absolute;
-  bottom: 0;
+  bottom: 2px;
   left: 1px;
-  background: url("images/dragon-off.png") bottom center no-repeat; }
-  .pom-pom.rawr {
-    background-image: url("images/dragon-on.png"); }
+  background: url('images/dragon-off.png') bottom center no-repeat;
+  z-index: 450;
+  filter: brightness(1.4);
+}
+.pom-pom.rawr {
+  background-image: url('images/dragon-on.png');
+}
 
 .lever {
   width: 12px;
   height: 61px;
   position: absolute;
   right: 0px;
-  bottom: 8px; }
-  .lever .knob {
-    width: 12px;
-    height: 12px;
-    background: url("images/lever-knob.png") bottom center no-repeat; }
-  .lever .shaft {
-    width: 4px;
-    height: 43px;
-    position: relative;
-    left: 4px;
-    background: url("images/lever-stick.png") bottom center no-repeat; }
-  .lever .bend {
-    width: 6px;
-    height: 6px;
-    position: relative;
-    left: 2px;
-    background: url("images/lever-bottom.png") bottom center no-repeat; }
+  bottom: 8px;
+}
+.lever .knob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: url('images/lever-knob.png') bottom center no-repeat;
+}
+.lever .shaft {
+  position: absolute;
+  bottom: 6px;
+  left: 4px;
+  width: 4px;
+  height: 43px;
+  background: url('images/lever-stick.png') bottom center no-repeat;
+}
+.lever .bend {
+  position: absolute;
+  left: 2px;
+  bottom: 0;
+  width: 6px;
+  height: 6px;
+  background: url('images/lever-bottom.png') bottom center no-repeat;
+}
 
 .paw {
   position: absolute;
   width: 43px;
   height: 89px;
-  background: url("images/paw-open.png") bottom center no-repeat;
+  background: url('images/paw-open.png') bottom center no-repeat;
   left: 30px;
   bottom: -90px;
-  z-index: 500; }
-  .paw.closed {
-    background-image: url("images/paw-closed.png"); }
+  z-index: 500;
+}
+.paw.closed {
+  background-image: url('images/paw-closed.png');
+}
+
+.glyphs {
+  width: 22px;
+  height: 68px;
+  position: absolute;
+  top: 15px;
+  background-image: url('images/glyphs.png');
+  z-index: 10;
+  filter: brightness(1);
+}
+.glyphs.column1 {
+  left: 7px;
+  background-position-y: 89px;
+}
+.glyphs.column2 {
+  left: 33px;
+  background-position-y: 22px;
+}
+.glyphs.column3 {
+  left: 59px;
+  background-position-y: 155px;
+}
+
+.lights {
+  position: absolute;
+  left: 14px;
+  top: 2px;
+  z-index: 600;
+  width: 61px;
+  height: 5px;
+  background-image: url('images/lights.png');
+  filter: brightness(1);
+}
+
+.pom-pom-lights {
+  position: absolute;
+  left: 10px;
+  bottom: -3px;
+  z-index: 440;
+  width: 70px;
+  height: 34px;
+  background: url('images/lights2.png') center center no-repeat;
+  opacity: 0;
+}
